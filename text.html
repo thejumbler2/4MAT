@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESM Module Text Input Test</title>
+    <style>
+      body {
+        background-color: #313338;
+        color: #dbdee1;
+        font-family: "Segoe UI", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        color: #fff;
+        font-size: 2rem;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+      }
+      p {
+        color: #b5bac1;
+        margin-bottom: 1.5em;
+      }
+      #customInput {
+        background-color: #383a40;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75em 1em;
+        font-size: 1rem;
+        outline: none;
+        transition: box-shadow 0.2s;
+        box-shadow: 0 1px 0 #222327;
+        width: 320px;
+        resize: none;
+        overflow-y: hidden;
+        min-height: 1rem;
+        line-height: 1rem;
+        text-wrap-mode: nowrap;
+        max-width: 80vw;
+      }
+      #customInput:focus {
+        box-shadow: 0 0 0 2px #5865f2;
+      }
+      #outputPreview {
+        margin-top: 1em;
+        background: #232428;
+        color: #fff;
+        border-radius: 6px;
+        padding: 0.75em 1em;
+        width: 320px;
+        min-height: 1.5em;
+        box-sizing: border-box;
+        font-size: 1rem;
+        word-break: break-word;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Custom Text Input Behavior</h1>
+    <p>
+      Type in the input below. The ESM module will change how this input works.
+    </p>
+    <textarea id="customInput" placeholder="Type here..."></textarea>
+    <div id="outputPreview"></div>
+
+    <script>
+      const input = document.getElementById("customInput");
+      const output = document.getElementById("outputPreview");
+      input.addEventListener("input", () => {
+        output.textContent = input.value;
+      });
+      input.addEventListener("input", () => {
+        input.style.height = "auto";
+        input.style.height = input.scrollHeight - 40 + "px";
+        input.style.width = "320px";
+        input.style.width = input.scrollWidth + "px";
+      });
+    </script>
+    <script type="module" src=""></script>
+  </body>
+</html>
