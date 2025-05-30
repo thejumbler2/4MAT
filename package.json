@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "simplebar": "^6.3.1",
+    "socketio": "^1.0.0"
+  }
+}
